@@ -12,19 +12,19 @@ def prediction(Gender,Married, ApplicantIncome, LoanAmount, Credit_History):
     
     #Pre-processing user input
     if Gender=="Male":
-        Gender==0
+        Gender=0
     else:
-        Gender==1
+        Gender=1
         
     if Married=="Unmarried":
-        Married==0
+        Married=0
     else:
-        Married==1
+        Married=1
     
     if Credit_History=='Unclear Debts':
-        Credit_History==0
+        Credit_History=0
     else:
-        Credit_History==1
+        Credit_History=1
         
     LoanAmount=LoanAmount/1000
     
