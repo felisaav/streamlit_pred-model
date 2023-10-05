@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import pickle
 import streamlit as st
-
-
-# In[ ]:
-
 
 #loading the trained model
 pickle_in=open('classifier.pkl','rb')
@@ -64,12 +54,13 @@ def main():
     Married=st.selectbox('Marital Status',("Unmarried","Married"))
     ApplicantIncome=st.number_input("Applicants monthly income")
     LoanAmount=st.number_input("Total loan amount")
-    Credit_History=st.selectbox('Credit_History',("Unclear Debts","Unclear Debts"))
+    Credit_History=st.selectbox('Credit_History',("Unclear Debts","No Unclear Debts"))
     result=""
     
     #when "Predict" is clicked, make the prediction  and store it
     if st.button("Predict"):
-        result=prediction(Gender, Married, ApplicantIncome, LoanAmount,Credit_History)
+        result=prediction(Gender,Married,ApplicantIncome,LoanAmount,Credit_History)
+	    
         st.success("Your loan is {}".format(result))
         print(LoanAmount)
         
