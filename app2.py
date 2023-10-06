@@ -1,21 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import pickle
 import streamlit as st
-
-
-# In[ ]:
-
 
 #loading the trained model
 pickle_in=open('classifier.pkl','rb')
 classifier=pickle.load(pickle_in)
 
-@st.cache_data()
+#@st.cache_data()
 #defining the function which will make the prediction using the data which the user inputs
 def prediction(email):
     
