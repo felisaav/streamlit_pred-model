@@ -31,6 +31,7 @@ def main():
     with st.form(key='test_email'):
         msg = st.text_area("Write your email here")
         submit_code = st.form_submit_button("Execute")
+	    
     if submit_code:
 	st.info("Query Result")
     	if model.predict(vectorizer.transform([msg]))[0] == 1:
