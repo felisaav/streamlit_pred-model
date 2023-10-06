@@ -16,7 +16,6 @@ pickle_in=open('classifier.pkl','rb')
 classifier=pickle.load(pickle_in)
 
 @st.cache_data()
-
 #defining the function which will make the prediction using the data which the user inputs
 def prediction(email):
     
@@ -40,7 +39,7 @@ def main():
     #display the front end aspect
     st.markdown(html_temp,unsafe_allow_html=True        
 
-    form=st.form(key='test_email')
+    st.form(key='test_email')
     msg =st.text_area("write your email here")
     submit_code = st.form_submit_button("Execute")
 	
@@ -53,6 +52,3 @@ def main():
         
 if __name__ == '__main__':
 	main()
-    
-    
-
