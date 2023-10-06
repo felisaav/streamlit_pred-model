@@ -27,7 +27,7 @@ def main():
     </div>
     """
     #display the front end aspect
-    st.markdown(html_temp,unsafe_allow_html=True
+    st.markdown(html_temp,unsafe_allow_html=True)
     with st.form(key='test_email'):
         msg = st.text_area("Write your email here")
         submit_code = st.form_submit_button("Execute")
