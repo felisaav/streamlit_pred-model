@@ -27,18 +27,16 @@ def main():
     </div>
     """
     #display the front end aspect
-    st.markdown(html_temp,unsafe_allow_html=True        
-
-    form = st.form(key='test_email') 
-    msg = st.text_area("Write your email here")
-    submit_code = st.form_submit_button("Execute")
-	
-    if submit_code:
-        st.info("Query Result")
-        if model.predict(vectorizer.transform([msg]))[0]==1:
-            st.write('Your message is a spam')
-        else:
-            st.write('Your message is a normal email')
+    st.markdown(html_temp,unsafe_allow_html=True
+    with st.form(key='test_email'):  # Use st.form() as a context manager
+       	msg = st.text_area("Write your email here")
+        submit_code = st.form_submit_button("Execute")
+        if submit_code:
+            st.info("Query Result")
+            if model.predict(vectorizer.transform([msg]))[0] == 1:
+                st.write('Your message is spam')
+            else:
+                st.write('Your message is a normal email')
         
 if __name__ == '__main__':
 	main()
